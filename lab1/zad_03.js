@@ -18,10 +18,10 @@ for (let i = 0; i < arr.length; i++) {
 console.log("Max wartosc:",max);
 console.log("Min wartosc:",min);
 
-arr.reverse();
+// arr.reverse();
 
 console.log(arr);
 
-for (let i = 0; i < arr.length; i++) {
+for (let i = arr.length; i >= 0; i--) {
     console.log(arr[i]);
 }
