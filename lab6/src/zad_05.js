@@ -8,5 +8,16 @@ const miniseries = seriesData.filter(series => series.seasons === 1).reduce( (ac
     return [...acc, formattedSeries];
 }, []).sort();
 
+const series = seriesData.reduce( (wholeArray, currentSeries) => {
+    if (currentSeries.startYear < 2010) {
+        //
+        // const formattedSeries = {};
+    } else if (2010 <= currentSeries.startYear < 2020) {
+        //
+    } else {
+        //
+    }
+}, [[], [], []]);
 
 console.dir(miniseries, { depth: null });
+console.dir(series, { depth: null });
