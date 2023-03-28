@@ -1,0 +1,19 @@
+{
+  "name": "lab6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "eslint": "eslint '**/*.js'",
+    "zad1": "nodemon src/zad_01.js",
+    "zad2": "nodemon src/zad_02.js",
+    "zad3": "nodemon src/zad_03.js",
+    "zad4": "nodemon src/zad_04.js",
+    "zad5": "nodemon src/zad_05.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "nodemon": "^2.0.22"
+  }
+}
