@@ -50,3 +50,11 @@ const object1 = {
   console.log(detectChanges(object1, object2));
 
   console.log(detectChanges(object3, object4));
+
+// i teraz znalazłem differenceWith i Object.entries
+
+function differentDetectChanges(original, modified) {
+    return _.differenceWith( Object.entries(modified), Object.entries(original), (mod, og) => _.isEqual(mod, og));
+}
+console.log(differentDetectChanges(object1, object2));
+console.log(differentDetectChanges(object3, object4));
