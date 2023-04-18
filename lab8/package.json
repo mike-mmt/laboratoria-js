@@ -1,0 +1,23 @@
+{
+  "name": "lab8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "babel": "babel src -d es5out",
+    "zad1": "nodemon src/objects.js",
+    "zad2": "nodemon src/creatingObjects.js",
+    "zad3": "nodemon src/log.js",
+    "zad4": "nodemon src/coffeeShop.js",
+    "zad5": "nodemon src/this.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.4",
+    "eslint": "^8.38.0",
+    "nodemon": "^2.0.22"
+  }
+}
