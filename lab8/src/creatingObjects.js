@@ -108,7 +108,7 @@ class BookCreator {
     this.author = author;
   }
   readers = 0;
-  addReader = function () {
+  addReader() {
     this.readers++;
   }
   printReaders = function () {
