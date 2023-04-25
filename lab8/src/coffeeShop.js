@@ -3,31 +3,37 @@ class Shop {
         this.item = item;
         this.menu = menu;
     }
+
     orders = [];
+
     addOrder(orderName){
         if (this.menu.some( x => x.item === orderName)) {
             this.orders.push(orderName);
-            return "Order added!"
+            return "Order added!";
         } else {
-            return "This item is currently unavailable!"
+            return "This item is currently unavailable!";
         }
     }
+
     fulfillOrder(){
         if (this.orders.length > 0) {
             const fulfilledOrder = this.orders.shift();
-            return `The ${fulfilledOrder} is ready!`
+            return `The ${fulfilledOrder} is ready!`;
         } else {
-            return "All orders have been fulfilled!"
+            return "All orders have been fulfilled!";
         }
     }
+
     listOrders(){
-        return this.orders
+        return this.orders;
     }
+
     dueAmount(){
         return this.orders.reduce( (acc, value) => {
-            return acc + this.getItemPrice(value) 
-        }, 0)
+            return acc + this.getItemPrice(value);
+        }, 0);
     }
+
     cheapestItem(){
         return this.menu.reduce( (acc, value) => {
             if (acc === "" || value.price < this.getItemPrice(acc)) {
@@ -35,16 +41,19 @@ class Shop {
             } else {
                 return acc;
             }
-        }, "")
+        }, "");
     }
+
     drinksOnly(){
-        return this.menu.filter( item => item.type === 'drink').map(x => x.item)
+        return this.menu.filter( item => item.type === 'drink').map(x => x.item);
     }
+
     foodOnly(){
-        return this.menu.filter( item => item.type === 'food').map(x => x.item)
+        return this.menu.filter( item => item.type === 'food').map(x => x.item);
     }
+
     getItemPrice(itemName) {
-        return this.menu.find(x => x.item === itemName).price
+        return this.menu.find(x => x.item === itemName).price;
     }
 }
 
@@ -82,7 +91,6 @@ const obj = new Shop('Shop1',
   { item: "lemon tea", type: "drink", price: 2.50 }
 ]
 );
-
 
 
 console.log(obj.addOrder("espresso")); // "This item is currently unavailable!" (Sklep nie sprzedaje espresso)
