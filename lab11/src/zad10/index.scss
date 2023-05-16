@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(252, 239, 213);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .buttons {
+        margin-top: 3em;
+        display: flex;
+        justify-content: center;
+        gap: 3em;
+        button {
+            background-color: rgb(221, 201, 173);
+            width: 10rem;
+            height: 5rem;
+            font-size: 1.5em;
+        }
+        padding-bottom: 2em;
+    }
+    #count {
+        font-size: 3em;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+}
