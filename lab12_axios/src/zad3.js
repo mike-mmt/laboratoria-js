@@ -1,15 +1,38 @@
 const poKolei = (fun1, fun2, fun3, cb) => {
+    // fun1()
+    //     .then(result => {
+    //         return fun2(result);
+    //     })
+    //     .then(result => {
+    //         return fun3(result);
+    //     })
+    //     .then(result => {
+    //         cb(result);
+    //     })
+    //     .catch(err => cb(err));  // źle
+    let result = 0;
     fun1()
-        .then(result => {
-            return fun2(result);
-        })
-        .then(result => {
-            return fun3(result);
-        })
-        .then(result => {
-            cb(result);
-        })
-        .catch(err => cb(err));
+    .then((res) => {
+        result = res;
+    }).catch((res) => {
+            result = res;
+    }).finally(() => {
+        fun2(result)
+        .then((res) => {
+            result = res;
+        }).catch((res) => {
+            result = res;
+        }).finally(() => {
+            fun3(result)
+            .then((res) => {
+                result = res;
+            }).catch((res) => {
+                result = res;
+            }).finally(() => {
+                cb(result);
+            })
+        });
+    });
   };
 
 const fn1 = () => {
@@ -19,7 +42,7 @@ const fn1 = () => {
 };
 const fn2 = (x) => {
     return new Promise((resolve, reject) => {
-        resolve(x + 8);
+        reject(x + 8);
     });
 };
 const fn3 = (x) => {

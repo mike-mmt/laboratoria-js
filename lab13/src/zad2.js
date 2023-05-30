@@ -1,22 +1,28 @@
 const razem = (fun1, fun2, cb) => {
-    Promise.all([fun1(), fun2()])
-        .then(results => {
-            cb(results)
-        })
+    const wyniki = [];
+    
+    fun1(callback, wyniki)
+    fun2(callback, wyinki)
 }
 
-const fn1 = () => {
-    return new Promise((resolve, reject) => {
-        resolve(5)
-    });
+const fn1 = (cb, wyniki) => {
+    setTimeout(() => {
+        console.log("w fn1");
+        cb(7, wyniki)
+    }, 2000);
 }
-const fn2 = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(8)
-        }, 500);
-    });
+const fn2 = (cb, wyniki) => {
+    setTimeout(() => {
+        console.log("w fn2");
+        cb(6, wyniki)
+    }, 1000);
 }
-const cb1 = (args) => console.log(args);
 
-razem(fn1, fn2, cb1)
+const callback = (x, wyniki) => {
+    wyniki.push(x)
+    if (wyniki.length == 2) {
+        console.log(`Wyniki: ${wyniki}`);
+    }
+}
+
+razem(fn1, fn2, callback)

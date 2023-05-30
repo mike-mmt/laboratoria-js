@@ -23,8 +23,22 @@ const grupuj = (funTab1, funTab2, cb) => {
                     }
                 })
                 .then(combinedResults => cb(combinedResults))
-        })
-        
+        })       
+}
+
+const grupuj2 = (funTab1, funTab2, cb) => {
+    Promise.all([Promise.all(funTab1), Promise.all(funTab2)]).then((res) => {
+        console.log(res);
+        if (res[0].length >= res[1].length) {
+            return res[0].reduce((acc, current, index) => {
+                return res[1].length > index ? [...acc, [current, res[1][index]]] : [...acc, [current, 0]] 
+            },[])
+        } else {
+            return res[1].reduce((acc, current, index) => {
+                return res[0].length > index ? [...acc, [res[0][index], current]] : [...acc, [0, current]] 
+            },[])
+        }
+    })
 }
 
 const fun1 = () => {
@@ -69,4 +83,4 @@ const fnTab2 = [fun2_1, fun2_2];
 
 const cb1 = (ress) => console.log(ress);//console.dir(ress, { depth: null });
 
-grupuj(fnTab1, fnTab2, cb1);
+grupuj2(fnTab1, fnTab2, cb1);

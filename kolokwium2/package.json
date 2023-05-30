@@ -1,0 +1,13 @@
+{
+  "name": "kolokwium2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "zad1": "node src/zad1",
+    "zad2": "node src/zad2"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
