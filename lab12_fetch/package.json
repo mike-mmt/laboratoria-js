@@ -1,0 +1,13 @@
+{
+  "name": "lab12_fetch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "fetch": "^1.1.0"
+  }
+}
