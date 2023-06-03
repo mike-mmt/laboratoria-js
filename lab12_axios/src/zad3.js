@@ -1,15 +1,4 @@
 const poKolei = (fun1, fun2, fun3, cb) => {
-    // fun1()
-    //     .then(result => {
-    //         return fun2(result);
-    //     })
-    //     .then(result => {
-    //         return fun3(result);
-    //     })
-    //     .then(result => {
-    //         cb(result);
-    //     })
-    //     .catch(err => cb(err));  // źle
     let result = 0;
     fun1()
     .then((res) => {

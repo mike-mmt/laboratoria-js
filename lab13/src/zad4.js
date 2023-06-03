@@ -2,7 +2,7 @@ const connect = (funTab, fun) => {
     const proms = funTab.map(fn => fn())
     return Promise.all(proms)
         .then(results => {
-            // return results.map(x => [x, fun(x)])
+            // return results.map(x => [x, fun(x).then((res))])
             const evaluatedResultsPromises = results.map(x => fun(x));
             return Promise.all(evaluatedResultsPromises)
                 .then(evaluatedResults => {

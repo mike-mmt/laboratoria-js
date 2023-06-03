@@ -1,8 +1,8 @@
-const razem = (fun1, fun2, cb) => {
+const razem = (fun1, fun2, callback) => {
     const wyniki = [];
     
     fun1(callback, wyniki)
-    fun2(callback, wyinki)
+    fun2(callback, wyniki)
 }
 
 const fn1 = (cb, wyniki) => {

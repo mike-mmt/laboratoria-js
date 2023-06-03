@@ -10,15 +10,16 @@ const razem = (promisesTab, callback) => {
     // const results = promisesTab.reduce((acc, val) => {
     //     return 
     // })
-    proms = promisesTab.map(x => x())
+
+    // const proms = promisesTab.map(x => x())
 
     const tab = [];
 
-    proms.forEach((el) => {
+    promisesTab.forEach((el) => {
         el.then((res) => {
             tab.push(res);
-            if (tab.length === arr.length) {
-                cb();
+            if (tab.length === promisesTab.length) {
+                callback(tab);
             }
         })
     })
@@ -30,7 +31,7 @@ const prom1 = new Promise((resolve, reject) => {
 const prom2 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(7)
-    }, 500);
+    }, 1000);
 })
 const prom3 = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -40,7 +41,7 @@ const prom3 = new Promise((resolve, reject) => {
 const prom4 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(9)
-    }, 1000);
+    }, 500);
 })
 
 const fn1 = () => {
