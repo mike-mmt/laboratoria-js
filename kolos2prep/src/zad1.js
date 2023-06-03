@@ -23,4 +23,4 @@ const asyncSort = (dim) => {
     }
 }
 
-asyncSort(5);
+asyncSort(5)
