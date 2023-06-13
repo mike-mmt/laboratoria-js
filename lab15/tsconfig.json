@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "rootDirs": ["src"],
+      "strict": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "target": "ES6"
+    }
+  }
